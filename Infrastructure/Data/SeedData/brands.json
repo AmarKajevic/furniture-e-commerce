@@ -1,0 +1,31 @@
+[
+  {
+    "Id": 1,
+    "Name": "Trust"
+  },
+  {
+    "Id": 2,
+    "Name": "Defender"
+  },
+  {
+    "Id": 3,
+    "Name": "Nordic"
+  },
+  {
+    "Id": 4,
+    "Name": "Ergonomic"
+  },
+  {
+    "Id": 5,
+    "Name": "Garden"
+  },
+  {
+    "Id": 6,
+    "Name": "Kruzo"
+  },
+  {
+    "Id": 7,
+    "Name": "Sofa"
+  }
+
+]
