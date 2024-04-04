@@ -30,7 +30,7 @@ app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
-
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 
