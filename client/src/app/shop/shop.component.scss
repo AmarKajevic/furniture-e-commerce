@@ -1,0 +1,41 @@
+.collapsible {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  span{
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
+.form-check-label {
+color: #666;
+font-size: 13px;
+}
+
+.form-check-label:hover {
+color: #222;
+}
+ul {
+  padding: 0;
+  margin-top: 18px;
+}
+
+li {
+  list-style: none;
+}
+.price-filter-top{
+justify-content:space-between;
+span {
+  font-size: 14px;
+  color: #222;
+  font-weight: bold;
+  padding-bottom: 4px;
+
+}
+}
+.pagination{
+  margin-top: 200px;
+}
+
