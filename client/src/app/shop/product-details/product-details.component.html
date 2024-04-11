@@ -1,6 +1,7 @@
+<div class="container mt-5">
 <div class="row" *ngIf="product">
   <div class="col-md-6">
-    <img [src]="product.pictureUrl" [alt]="product.name" class="img-fluid">
+    <img [src]="product.pictureUrl" [alt]="product.name" class="product-image">
   </div>
   <div class="col-md-6 mt-5">
     <h2>{{product.name}}</h2>
@@ -16,4 +17,5 @@
       <p>{{product.description}}</p>
     </div>
   </div>
+</div>
 </div>
