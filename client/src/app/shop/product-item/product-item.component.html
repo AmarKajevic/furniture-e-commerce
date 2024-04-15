@@ -1,13 +1,13 @@
 <div class="col-12 col-md-4 col-lg-3 mb-5"*ngIf="product">
-  <div class="product-item" routerLink="/shop/{{product.id}}" >
-    <div class="product-image">
+  <div class="product-item"  >
+    <div class="product-image" routerLink="/shop/{{product.id}}">
       <img src="{{product.pictureUrl}}"alt="{{product.name}}" class="img-fluid product-thumbnail">
     </div>
 
-    <h3 class="product-title">{{product.name}}</h3>
+    <h3 class="product-title" routerLink="/shop/{{product.id}}">{{product.name}}</h3>
     <strong class="product-price">{{product.price | currency}}</strong>
 
-    <span class="icon-cross">
+    <span class="icon-cross" (click)="addItemToBasket()">
       <img src="assets/images/cross.svg" class="img-fluid">
     </span>
   </div>

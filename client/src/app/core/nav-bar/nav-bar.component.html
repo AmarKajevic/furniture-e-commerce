@@ -23,7 +23,9 @@
 
       <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
         <li><a class="nav-link" href="#"><img src="assets/images/user.svg"></a></li>
-        <li><a class="nav-link" href="cart.html"><img src="assets/images/cart.svg"></a></li>
+        <li><div *ngIf="(basketService.basketSource$ | async) as basket" class="nav-link d-flex justify-content-between" routerLink="/basket"><img src="assets/images/cart.svg">
+          <div class="count-number">{{getCount(basket.items)}}</div>
+        </div></li>
       </ul>
     </div>
   </div>
