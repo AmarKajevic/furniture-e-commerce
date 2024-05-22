@@ -1,0 +1,40 @@
+<div class="site-blocks-table" *ngIf="(basketService.basketSource$ |async) as basket">
+  <table class="custom-table" >
+    <thead [class.bg-light]="isBasket">
+      <tr>
+        <th class="product-thumbnail">Image</th>
+        <th class="product-name">Product</th>
+        <th class="product-price">Price</th>
+        <th [class.text-center]="!isBasket" class="product-quantity">Quantity</th>
+        <th class="product-total">Total</th>
+        <th *ngIf="isBasket" class="product-remove">Remove</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of basket.items">
+        <td class="product-thumbnail">
+          <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid">
+        </td>
+        <td class="product-name">
+          <h2 class="h5 text-black">{{item.productName}}</h2>
+
+        </td>
+        <td style="font-size: 1.5em;">{{item.price | currency}}</td>
+        <td>
+          <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px; "[class.justify-content-center]="!isBasket">
+            <div class="input-group-prepend">
+              <button *ngIf="isBasket" class="btn btn-outline-black decrease" (click)="removeBasketItem(item.id, 1)" type="button">&minus;</button>
+            </div>
+            <div class="form-control text-center quantity-amount "  placeholder="" aria-label="Example text with button addon " aria-describedby="button-addon1"><span style="font-size: 1.3em;">{{item.quantity}}</span></div>
+            <div class="input-group-append">
+              <button *ngIf="isBasket" class="btn btn-outline-black increase" (click)="addBasketItem(item)" type="button">&plus;</button>
+            </div>
+          </div>
+
+        </td>
+        <td style="font-size: 1.5em;">{{item.price * item.quantity | currency}}</td>
+        <td *ngIf="isBasket"><a  (click)="removeBasketItem(item.id, item.quantity)" class="btn btn-black btn-sm">X</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

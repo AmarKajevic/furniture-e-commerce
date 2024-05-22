@@ -9,46 +9,10 @@
 
     <div class="row mb-5">
       <form class="col-md-12" method="post">
-        <div class="site-blocks-table">
-          <table class="custom-table" >
-            <thead>
-              <tr>
-                <th class="product-thumbnail">Image</th>
-                <th class="product-name">Product</th>
-                <th class="product-price">Price</th>
-                <th class="product-quantity">Quantity</th>
-                <th class="product-total">Total</th>
-                <th class="product-remove">Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let item of basket.items">
-                <td class="product-thumbnail">
-                  <img src="{{item.pictureUrl}}" alt="{{item.productName}}" class="img-fluid">
-                </td>
-                <td class="product-name">
-                  <h2 class="h5 text-black">{{item.productName}}</h2>
-
-                </td>
-                <td style="font-size: 1.5em;">{{item.price | currency}}</td>
-                <td>
-                  <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                    <div class="input-group-prepend">
-                      <button class="btn btn-outline-black decrease" (click)="removeItem(item.id, 1)" type="button">&minus;</button>
-                    </div>
-                    <div class="form-control text-center quantity-amount "  placeholder="" aria-label="Example text with button addon " aria-describedby="button-addon1"><span style="font-size: 1.5em;">{{item.quantity}}</span></div>
-                    <div class="input-group-append">
-                      <button class="btn btn-outline-black increase" (click)="incrementQuantity(item)" type="button">&plus;</button>
-                    </div>
-                  </div>
-
-                </td>
-                <td style="font-size: 1.5em;">{{item.price * item.quantity | currency}}</td>
-                <td><a (click)="removeItem(item.id, item.quantity)" class="btn btn-black btn-sm">X</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <app-basket-summary
+        (addItem)="incrementQuantity($event)"
+        (removeItem)="removeItem($event)"
+    ></app-basket-summary>
       </form>
     </div>
 
