@@ -1,17 +1,22 @@
-button
+
 .nav-link
 {
   background: #e9ecef;
-
+  border-radius: 0;
   border: none;
   color: #333;
+  &:disabled:not(.active-green){
+    color: #333;
+    background: #e9ecef;
+
+  }
 
 }
+
+
+
 .active-green {
   background-color: #3b5d50;
   color: white; /* Change the text color if needed */
 }
-.nav-item
-{
-  padding: 10px;
-}
+
